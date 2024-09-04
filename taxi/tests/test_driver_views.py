@@ -39,7 +39,7 @@ class PrivateDriverViewsTests(TestCase):
 
     def test_driver_search(self):
         Driver.objects.create(
-            username="shel.don",
+            username="shell.don",
             password="<PASSWORD>",
             first_name="Sheldon",
             last_name="Cooper",
@@ -54,6 +54,6 @@ class PrivateDriverViewsTests(TestCase):
             license_number="HJK90658",
 
         )
-        driver = Driver.objects.filter(username="shel.don")
-        response = self.client.get(f"{DRIVER_URL}?username=shel")
+        driver = Driver.objects.filter(username="shell.don")
+        response = self.client.get(f"{DRIVER_URL}?username=shell.don")
         self.assertEqual(list(response.context["driver_list"]), list(driver))
