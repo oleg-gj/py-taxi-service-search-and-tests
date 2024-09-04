@@ -60,7 +60,7 @@ class ManufacturerListView(LoginRequiredMixin, generic.ListView):
             queryset = queryset.filter(
                 name__icontains=form.cleaned_data["name"]
             )
-            return queryset
+        return queryset
 
 
 class ManufacturerCreateView(LoginRequiredMixin, generic.CreateView):
@@ -101,7 +101,7 @@ class CarListView(LoginRequiredMixin, generic.ListView):
             queryset = queryset.filter(
                 model__icontains=form.cleaned_data["model"]
             )
-            return queryset
+        return queryset
 
 
 class CarDetailView(LoginRequiredMixin, generic.DetailView):
@@ -146,7 +146,7 @@ class DriverListView(LoginRequiredMixin, generic.ListView):
             queryset = queryset.filter(
                 username__icontains=form.cleaned_data["username"]
             )
-            return queryset
+        return queryset
 
 
 class DriverDetailView(LoginRequiredMixin, generic.DetailView):
